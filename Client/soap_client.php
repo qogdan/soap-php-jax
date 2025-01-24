@@ -3,9 +3,13 @@
 
     try{
         $client = new SoapClient($wsdl);
-        $result = $client->add(['a' => 5, 'b' => 10]);
+        $params = [
+            'arg0' => 5,
+            'arg1' => 10,
+        ];
+        $result = $client->__soapCall('add', [$params]);
         echo "The result of addition is: " . $result->return;
-    } catch (Exception $e){
-        echo "Error: " . $e->getMessage();
+    } catch (SoapFault $fault) {
+        echo "Error: " . $fault->getMessage();
     }
 ?>
