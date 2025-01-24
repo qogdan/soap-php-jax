@@ -1,3 +1,3 @@
-SOAP Application
-Client using PHP
-Server using JAX-WS
+SOAP Application.
+Client using PHP deployed on Apache.
+Server using JAX-WS deployed on Tomcat.
